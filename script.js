@@ -191,10 +191,12 @@ function pausecountdown() {
 function playStudy() {
     time = 25 * 60;
     document.getElementById('countdown').innerHTML = "25:00"
+    document.getElementById('phrase').innerHTML = "Time for work!"
 }
 function playBreak() {
     time = 10 * 60
     document.getElementById('countdown').innerHTML = "10:00"
+    document.getElementById('phrase').innerHTML = "Take a break! :)"
 }
 
   
