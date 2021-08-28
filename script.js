@@ -8,7 +8,7 @@ const progressContainer = document.querySelector('.progress-container')
 const title = document.querySelector('#title') 
 
 //Song titles 
-const songs = ['Sunshine and Butterflies', 'Last Cup of Coffee', 'Foreverland']
+const songs = ['Comfibeats - Sunshine and Butterflies', 'Comfibeats - Last Cup of Coffee', 'Comfibeats - Foreverland']
 
 //Keep track of songs 
 let songIndex = 2 
@@ -133,24 +133,29 @@ function loadQuote(){
 
 
 //Pomodoro Timer 
-const pomBtn = document.getElementsByClassName("pom-btn")
-const pomPlay = document.querySelector("#pom-play")
+const pomBtn = document.getElementsByClassName("pom-btn");
+const pomPlay = document.querySelector("#pom-play");
+
+
+function closePomTimer() {
+    console.log("bro work");
+    document.getElementById("pom-timer").style.display = "none";
+}
 
 function on() {
     document.getElementById("pom-timer").style.display = "block";
+    console.log("it works bro");
   }
 
-  function close() {
-    document.getElementById("pom-timer").style.display = "none";
-  }
+
  
 
-let startingMinutes = 25;
-let breakMinutes = 10 * 60;
-let time = startingMinutes * 60;
+
 const countdownM = document.getElementById("countdown");
+const breakTxt = document.getElementById("break-btn");
 var pauseflag = false;
 var myTimer;
+let time;
 
 function countdownupdate() { 
   const minutes = Math.floor(time / 60);
@@ -162,7 +167,7 @@ function countdownupdate() {
     
     if (minutes == 0 && seconds == 0) {
       clearInterval(myTimer);
-      let audio = new Audio("audio/Softchime.mp3");
+      let audio = new Audio("audio/softding.wav");
       audio.play();
 
     } else {
@@ -183,22 +188,13 @@ function pausecountdown() {
   pauseflag = true;
 }
 
+function playStudy() {
+    time = 25 * 60;
+    document.getElementById('countdown').innerHTML = "25:00"
+}
 function playBreak() {
-    const minutes = Math.floor(time / 60);
-  let seconds = breakMinutes % 60;
-  if (!pauseflag) {
-    if (seconds < 10) {seconds = "0" + seconds}; 
-    countdownM.innerHTML = `${minutes}: ${seconds}`;
-    
-    if (minutes == 0 && seconds == 0) {
-      clearInterval(myTimer);
-      let audio = new Audio("audio/Softchime.mp3");
-      audio.play();
-
-    } else {
-      time--;
-    }
-  }
+    time = 10 * 60
+    document.getElementById('countdown').innerHTML = "10:00"
 }
 
   

@@ -138,7 +138,7 @@ header h1 {
     border:0; 
     font-family: ubuntu;
     font-size: 32px;
-    justify-self: center;
+    
     cursor:pointer; 
     width: 100%;
 
@@ -160,13 +160,14 @@ header h1 {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
     width: 17vw; /* Full width (cover the whole page) */
-    height: 35%; /* Full height (cover the whole page) */
-    top: 50vh;
+    height: 43%; /* Full height (cover the whole page) */
+    top: 40vh;
     left: 79.8vw;
     border-radius: 15px;
     background-color: #DFFFDE; /* Black background with opacity */
     z-index: 2; 
     cursor:pointer; 
+    transition: .5s ease;
 }
 
 #exit {
@@ -196,7 +197,7 @@ header h1 {
     font-size: 50px ;
 }
 
-#break-btn {
+#break-btn, #study-btn{
     font-size: 21px;
     text-align: center;
     border-radius: 15px;

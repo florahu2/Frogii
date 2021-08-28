@@ -75,13 +75,14 @@
             <div></div>
             </section>
             <div id= pom-timer>
-                <i id= "exit" class="fas fa-times" onclick="close()";></i>
+                <i id= "exit" class="fas fa-times" onclick="closePomTimer()"></i>
                 <h4 id="phrase">Time for Work!</h4>
                 <h1 id= "countdown">25:00</h1>
                 <div class= "pom-btn">
-                    <i id= "pom-play" class="fas fa-play-circle" onclick="playcountdown()";></i>
+                    <i id= "pom-play" class="fas fa-play-circle" onclick="playcountdown()"></i>
                     <i id= "pom-pause" class="fas fa-pause-circle" onclick= "pausecountdown()"></i>
                 </div>
+                <button id= study-btn onclick= playStudy()>Study!</button>
                 <button id= break-btn onclick= playBreak()>break!</button>
             </div>
         </div>
