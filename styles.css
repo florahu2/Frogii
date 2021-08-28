@@ -2,26 +2,27 @@
 
 body {
     font-family: ubuntu;
-    margin:0;
+    margin: 0px;
     height: 100vh;
     width:100vh;
-    /*background-color:#D2F9C8;*/
+    background-color: #D2F9C8;
 }
 .top-row{
-    background-color: royalblue;
+    background-color: #D2F9C8;
 }
 
 .bottom-row {
-    background-color: saddlebrown;
+    background-color: #D2F9C8;
 }
+
 .container {
-    background-color: purple;
+    background-color: #D2F9C8;
     display: grid;
     grid-template-rows: 10vh 10vh 60vh 20vh;
 
 }
 .quotebox {
-    background-color: salmon;
+    background-color: #D2F9C8;
 }
 header h1 {
     color: #449B43;
@@ -46,7 +47,7 @@ header h1 {
 
 
 .hero {
-    background-color: aqua;
+    background-color: #D2F9C8;
 }
 
 .frog-bg {
@@ -58,7 +59,8 @@ header h1 {
 
 .bottom-row {
     display: grid;
-    grid-template-columns: 20vw 46vw 17vw 17vw;
+    grid-template-columns: 20vw 38vw 17vw 17vw 1vw;
+    grid-column-gap:3vh;
 }
 
 .music-container {
@@ -69,7 +71,7 @@ header h1 {
     position: absolute;
     bottom: 0;
     margin-bottom: 20px;
-    margin-left: 20px;
+    margin-left: 4vh;
 }
 
 .navigation {
@@ -131,14 +133,55 @@ header h1 {
 .btn {
     background-color: #449B43;
     color: #DFFFDE; 
-    padding: 20px;
+    padding: 22px 50px;
     border-radius: 15px;
     border:0; 
     font-family: ubuntu;
     font-size: 32px;
+    justify-self: center;
+    cursor:pointer; 
+    width: 100%;
 
 }
 
 .btn:focus {
     outline: 0; 
+}
+
+#pom-btn {
+    margin-top: 8vh;
+}
+
+#mov-btn {
+    margin-top: 8vh;
+}
+
+#pom-timer {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 17vw; /* Full width (cover the whole page) */
+    height: 30%; /* Full height (cover the whole page) */
+    top: 55vh;
+    left: 79.8vw;
+    border-radius: 15px;
+    background-color: #DFFFDE; /* Black background with opacity */
+    z-index: 2; 
+    ;
+}
+
+.pom-btn {
+    padding-top: 10px;
+    text-align: center;
+    color: #449B43; 
+}
+
+#pom-timer > h4, h1 {
+    padding-top: 15px;
+    color: #449B43; 
+    text-align: center;
+    line-height: 10px;
+}
+
+#pom-timer > h1 {
+    font-size: 50px ;
 }

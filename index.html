@@ -12,68 +12,78 @@
 <style>
     @font-face { font-family: ubuntu; src: url(/fonts/Ubuntu-Title.ttf) } 
 </style>
-<body>
-    <div class="container">
-        <header class="top-row">
-            <div>
-            <h1 id="branding">Frogii</h1>
-            </div>
-            <nav>
-                <h1 id= "time">9:00</h1>
-            </nav>
-            
-        </header>
-        <section class="quotebox">
-            <div>
-                <h1 id= "quote">I hope you're doing swell!</h1>
-            </div>
-        </section>
-        <section class= "hero">
-            
-            <div>
-                <img src= img/restfrog.png class="frog-bg">
-            </div>
-        </section>
+<body onload="startTime()">
+    <wrapper>
+        <div class="container">
+            <header class="top-row">
+                <div>
+                <h1 id="branding">Frogii</h1>
+                </div>
+                <nav>
+                    <h1 id= "time"></h1>
+                </nav>
+                
+            </header>
+            <section class="quotebox">
+                <div>
+                    <h1 id= "quote"></h1>
+                </div>
+            </section>
+            <section class= "hero">
+                
+                <div>
+                    <img src= img/restfrog.png class="frog-bg">
+                </div>
+            </section>
 
-        <section class= bottom-row>
-        <div class="mus-box">
-            <div class="music-container">
-                <div class="music-info">
-                    <h4 id= "title"> ♫ Comfy vibes</h4>
-                    <div class= "progress-container">
-                        <div class="progress"></div>
+            <section class= bottom-row>
+            <div class="mus-box">
+                <div class="music-container">
+                    <div class="music-info">
+                        <h4 id= "title"> ♫ Comfy vibes</h4>
+                        <div class= "progress-container">
+                            <div class="progress"></div>
+                        </div>
+                    </div>
+
+                    <audio src="audio/Foreverland.mp3" id="audio"></audio> <!--Add in audio later-->
+
+                    <div class= "navigation">
+                        <button id="prev" class="action-btn">
+                            <i class="fas fa-backward"></i>
+                        </button>
+                        <button id="play" class="action-btn action-btn-big">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <button id="next" class="action-btn">
+                            <i class="fas fa-forward"></i>
+                        </button>
                     </div>
                 </div>
+            </div>
 
-                <audio src="audio/Foreverland.mp3" id="audio"></audio> <!--Add in audio later-->
+            <div class="filler">
+            </div>
 
-                <div class= "navigation">
-                    <button id="prev" class="action-btn">
-                        <i class="fas fa-backward"></i>
-                    </button>
-                    <button id="play" class="action-btn action-btn-big">
-                        <i class="fas fa-play"></i>
-                    </button>
-                    <button id="next" class="action-btn">
-                        <i class="fas fa-forward"></i>
-                    </button>
+            <div class="mov-container">
+                <button onclick= "loadQuote()" class= "btn" id= "mov-btn">motivation!</button>
+            </div>
+
+            <div class="pom-container">
+                <button onclick= "on()" class= "btn" id= "pom-btn">pomodoro</button>
+            </div>
+            <div></div>
+            </section>
+            <div id= pom-timer>
+                <h4 id="phrase">Time for Work!</h4>
+                <h1 id= "countdown">25:00</h1>
+                <div class= "pom-btn">
+                <span class="iconify" data-icon="bi:play-circle-fill" style="color: #449B43;" data-height="66"></span>
+                <span class="iconify" data-icon="bi:pause-circle-fill" style="color: #449B43;" data-height="66"></span>
                 </div>
             </div>
         </div>
-
-        <div class="filler">
-            just filler...
-        </div>
-
-        <div class="mov-container">
-            <button class= "btn">click for motivation!</button>
-        </div>
-
-        <div class="pom-container">
-            <button class= "btn">pomodoro</button>
-        </div>
-        </section>
-    </div>
+    </wrapper>
     <script src="script.js"></script>
 </body>
 </html>

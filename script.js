@@ -26,7 +26,6 @@ function playSong() {
     musicContainer.classList.add('play')
     playBtn.querySelector('i.fas').classList.remove('fa-play')
     playBtn.querySelector('i.fas').classList.add('fa-pause')
-
     audio.play()
 }
 
@@ -94,4 +93,57 @@ nextBtn.addEventListener('click', nextSong)
 
 audio.addEventListener('timeupdate', updateProgress)
 
-progressContainer.addEventListener('click', setProgress) 
+progressContainer.addEventListener('click', setProgress)
+
+//Clock 
+function startTime() {
+    const today = new Date(); 
+    let h = today.getHours(); 
+    let m = today.getMinutes();
+    m = checkTime(m); 
+    document.getElementById('time').innerHTML =  h + ":" + m;
+    setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+    if (i < 10) {i = "0" + i}; 
+    return i; 
+}
+
+// Quote Generator
+
+const quotes= [
+    "A smile is happiness you'll find right under your nose!", 
+    "Celebrate every tiny victory", 
+    "Accept that some days you’re the pigeon , and some days you’re the statue",
+    "Be a pineapple . Stand tall , wear a crown and be sweet on the inside!", 
+    "Learning is never done without errors and defeat", 
+    "You don’t have to be great to start , but you have to start to be great", 
+    "Start where you are . Use what you have . Do what you can", 
+    "i believe that you can do it!", 
+    "I hope that you had a wonderful day!", 
+    "life goes on , so keep going!",
+    "you can do it!"
+]
+
+function loadQuote(){
+    let quoteIndex = Math.floor(Math.random() * (quotes.length))
+    document.getElementById('quote').innerHTML = quotes[quoteIndex]
+}
+
+
+//Pomodoro Timer 
+const pomBtn = document.getElementById("pom-btn")
+
+function on() {
+    document.getElementById("pom-timer").style.display = "block";
+  }
+  
+  function off() {
+    document.getElementById("pom-timer").style.display = "none";
+  }
+
+  pomBtn.addEventListener('click', on)
+ 
+ 
+  
