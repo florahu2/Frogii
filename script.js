@@ -133,17 +133,72 @@ function loadQuote(){
 
 
 //Pomodoro Timer 
-const pomBtn = document.getElementById("pom-btn")
+const pomBtn = document.getElementsByClassName("pom-btn")
+const pomPlay = document.querySelector("#pom-play")
 
 function on() {
     document.getElementById("pom-timer").style.display = "block";
   }
-  
-  function off() {
+
+  function close() {
     document.getElementById("pom-timer").style.display = "none";
   }
+ 
 
-  pomBtn.addEventListener('click', on)
- 
- 
+let startingMinutes = 25;
+let breakMinutes = 10 * 60;
+let time = startingMinutes * 60;
+const countdownM = document.getElementById("countdown");
+var pauseflag = false;
+var myTimer;
+
+function countdownupdate() { 
+  const minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+  //let countdownM = document.getElementById("countdown");
+  if (!pauseflag) {
+    if (seconds < 10) {seconds = "0" + seconds}; 
+    countdownM.innerHTML = `${minutes}: ${seconds}`;
+    
+    if (minutes == 0 && seconds == 0) {
+      clearInterval(myTimer);
+      let audio = new Audio("audio/Softchime.mp3");
+      audio.play();
+
+    } else {
+      time--;
+    }
+  }
+}
+
+function playcountdown() {
+  if (!pauseflag && myTimer == null) {
+    myTimer = setInterval(countdownupdate, 1000);
+  } else {
+    pauseflag = false;
+  }
+}
+
+function pausecountdown() {
+  pauseflag = true;
+}
+
+function playBreak() {
+    const minutes = Math.floor(time / 60);
+  let seconds = breakMinutes % 60;
+  if (!pauseflag) {
+    if (seconds < 10) {seconds = "0" + seconds}; 
+    countdownM.innerHTML = `${minutes}: ${seconds}`;
+    
+    if (minutes == 0 && seconds == 0) {
+      clearInterval(myTimer);
+      let audio = new Audio("audio/Softchime.mp3");
+      audio.play();
+
+    } else {
+      time--;
+    }
+  }
+}
+
   
