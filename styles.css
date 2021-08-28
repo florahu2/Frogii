@@ -1,0 +1,78 @@
+@font-face { font-family: ubuntu; src: url(/fonts/Ubuntu-Title.ttf) } 
+
+body {
+    font-family: ubuntu;
+    margin:0;
+    height: 100vh;
+    background-color:#D2F9C8;
+}
+
+header h1 {
+    color: #449B43;
+}
+
+.bottom-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.music-container {
+    background-color: #449B43;
+    border-radius: 15px;
+    display:flex; 
+    
+    position: absolute;
+    margin:100px 0;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:15px;
+    z-index:1; 
+}
+
+.action-btn {
+    background-color: #449B43;
+    border:0; 
+    cursor:pointer;
+    padding:10px;
+    margin:0 20px;
+}
+
+.action-btn:focus {
+    outline: 0; 
+}
+
+.music-info {
+    position: absolute;
+    top:0; 
+    width: 100%; 
+    transform: translateY(-100%);
+    font-size: 24px;
+    color: #449B43;
+}
+
+.music-info > h4 {
+    color: #449B43; 
+}
+
+.progress-container {
+    background-color: #DFFFDE;
+    border-radius: 5px;
+    cursor:pointer; 
+    margin:10px 0; 
+    height:10px;
+    width:100%;
+}
+
+.progress {
+    background-color: #449B43;
+    border-radius: 5px;
+    height: 100%;
+    width:0;
+    transform: width 0.1s linear;
+}
+
+

@@ -4,12 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+    <link href="styles.css" rel="stylesheet">
     <title>Frogii ♫ </title>
 </head>
 <body>
-    <header>
-        <h1>Frogii</h1>
-        <h1 class= "time">9:00</h1>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Frogii</h1>
+            <h1 id= "time">9:00</h1>
+        </header>
+
+        <section>
+            <div class="hero">
+                <img src= img/restfrog.png>
+            </div>
+        </section>
+
+        <section class= bottom-row>
+            <div class="music-container">
+                <div class="music-info">
+                    <h4 id= "title"> ♫ Comfy vibes</h4>
+                    <div class= "progress-container">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+
+                <audio src="audio/Foreverland.mp3" id="audio"></audio> <!--Add in audio later-->
+
+                <div class= "navigation">
+                    <button id="prev" class="action-btn">
+                        <span class="iconify" data-icon="eva:rewind-left-fill" style="color: white;" data-height="52"></span>
+                    </button>
+                    <button id="play" class="action-btn">
+                        <span class="iconify" data-icon="clarity:play-solid" style="color: white;" data-height="55"></span>
+                    </button>
+                    <button id="next" class="action-btn">
+                        <span class="iconify" data-icon="heroicons-solid:fast-forward" style="color: white;" data-height="52"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
